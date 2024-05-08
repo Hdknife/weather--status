@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Website</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Weather App</h1>
+    </header>
+
+    <main>
+        <section id="current">
+            <form action="{{ url_for('get_weather') }}" method="Post">
+            <table>
+                <tr>
+                    <td> City name</td>
+                    <td><input class="city" type = "text" name = "citys"></td>
+                    <td><button type ="submit">Search</button></td>
+                </tr>
+            </table>
+        </form>
+        </section>
+
+        <section>
+            <h2>Current Weather</h2>
+            <div class="weather-info">
+                <div class="weather-card">
+                    <div class="weather-icon">
+                        <img src="https://openweathermap.org/img/wn/02d.png" alt="Weather Icon">
+                    </div>
+                    <div class="weather-details">
+                        <p class="temperature">{{ temperature }}<p>{{symbol}}</p></p>
+                        <p class="description">{{ status }}</p>
+                        <p class="notice">{{ notice }}</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+    
+</body>
+</html>
